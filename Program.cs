@@ -193,7 +193,17 @@ namespace mail_to_plesanter
             var response = http.PostAsync(apiURL, content).Result;
             var responseContentString = response?.Content?.ReadAsStringAsync().Result;
             var responseContent = JsonSerializer.Deserialize<Dictionary<string, object>>(responseContentString);
-            return responseContent["Id"].ToString();
+            if (((System.Text.Json.JsonElement)responseContent["StatusCode"]).GetDecimal() == 200)
+            {
+                return responseContent["Id"].ToString();
+            }
+            else
+            {
+                //ログ出力して落とす。
+                Log.Error(((System.Text.Json.JsonElement)responseContent["StatusCode"]).ToString());
+                Log.Error(responseContent["Message"].ToString());
+                throw new Exception();
+            }
 
         }
 
