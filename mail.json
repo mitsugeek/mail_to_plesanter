@@ -1,0 +1,11 @@
+﻿{
+  "C_IMAP_HOST": "host",
+  "C_IMAP_PORT": "port",
+  "C_ACCOUNT_USER": "user name",
+  "C_ACCOUNT_PASS": "user password",
+  "DB_FILE": "plesanter_to_mail.db",
+  "PLEASANTER_API_KEY": "-- API KEY --",
+  "PLEASANTER_SERVER_URL": "http://localhost",
+  "PLEASANTER_SITE_ID": "site_id",
+  "MAIL_DONE_DELETE": false
+}
