@@ -149,18 +149,20 @@ namespace mail_to_plesanter
                 var AttachmentsHList = new List<Dictionary<string, object>>();
                 var AttachmentsIList = new List<Dictionary<string, object>>();
                 var AttachmentsJList = new List<Dictionary<string, object>>();
+                int AttachmentsCount = 0;
                 foreach (var filename in Directory.GetFiles(idpath))
                 {
-                    if (AttachmentsHash.Count < 10) { SetAttachments(ref AttachmentsAList, filename); }
-                    else if (10 <= AttachmentsHash.Count && AttachmentsHash.Count < 20) { SetAttachments(ref AttachmentsBList, filename); }
-                    else if (20 <= AttachmentsHash.Count && AttachmentsHash.Count < 30) { SetAttachments(ref AttachmentsCList, filename); }
-                    else if (30 <= AttachmentsHash.Count && AttachmentsHash.Count < 40) { SetAttachments(ref AttachmentsDList, filename); }
-                    else if (40 <= AttachmentsHash.Count && AttachmentsHash.Count < 50) { SetAttachments(ref AttachmentsEList, filename); }
-                    else if (50 <= AttachmentsHash.Count && AttachmentsHash.Count < 60) { SetAttachments(ref AttachmentsFList, filename); }
-                    else if (60 <= AttachmentsHash.Count && AttachmentsHash.Count < 70) { SetAttachments(ref AttachmentsGList, filename); }
-                    else if (70 <= AttachmentsHash.Count && AttachmentsHash.Count < 80) { SetAttachments(ref AttachmentsHList, filename); }
-                    else if (80 <= AttachmentsHash.Count && AttachmentsHash.Count < 90) { SetAttachments(ref AttachmentsIList, filename); }
-                    else if (90 <= AttachmentsHash.Count && AttachmentsHash.Count < 100) { SetAttachments(ref AttachmentsJList, filename); }
+                    AttachmentsCount++;
+                    if (AttachmentsCount <= 10) { SetAttachments(ref AttachmentsAList, filename); }
+                    else if (10 <= AttachmentsCount && AttachmentsCount <= 20) { SetAttachments(ref AttachmentsBList, filename); }
+                    else if (20 <= AttachmentsCount && AttachmentsCount <= 30) { SetAttachments(ref AttachmentsCList, filename); }
+                    else if (30 <= AttachmentsCount && AttachmentsCount <= 40) { SetAttachments(ref AttachmentsDList, filename); }
+                    else if (40 <= AttachmentsCount && AttachmentsCount <= 50) { SetAttachments(ref AttachmentsEList, filename); }
+                    else if (50 <= AttachmentsCount && AttachmentsCount <= 60) { SetAttachments(ref AttachmentsFList, filename); }
+                    else if (60 <= AttachmentsCount && AttachmentsCount <= 70) { SetAttachments(ref AttachmentsGList, filename); }
+                    else if (70 <= AttachmentsCount && AttachmentsCount <= 80) { SetAttachments(ref AttachmentsHList, filename); }
+                    else if (80 <= AttachmentsCount && AttachmentsCount <= 90) { SetAttachments(ref AttachmentsIList, filename); }
+                    else if (90 <= AttachmentsCount && AttachmentsCount <= 100) { SetAttachments(ref AttachmentsJList, filename); }
                     Log.Logger.Information(filename);
                 }
 
